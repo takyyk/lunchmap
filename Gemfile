@@ -30,6 +30,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails', '~> 3.8'
+  gem 'spring-commands-rspec'
 end
 
 group :development do
@@ -56,6 +57,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'launchy'
   gem 'timecop'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
