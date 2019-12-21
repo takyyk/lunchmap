@@ -35,7 +35,15 @@ module AppName
     # the framework and any gems in your application.
 
     config.generators do |g|
-      g.test_framework :rspec
+      g.test_framework :rspec,
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false,
+                       controller_specs: false,
+                       model_specs: true,
+                       request_specs: false,
+                       fixtures: true,
+                       system: true
       g.skip_routes true
       g.stylesheets false
       g.javascripts false
