@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # railsのruby verに合わせる
-      - image: circleci/ruby:2.6.2
+      - image: circleci/ruby:2.6.2-stretch-node-browsers
         # database.ymlとの設定差異に注意
         environment:
           RAILS_ENV: test
@@ -36,6 +36,22 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # Only necessary if app uses webpacker or yarn in some other way
+      - restore_cache:
+          keys:
+            - rails-demo-yarn-{{ checksum "yarn.lock" }}
+            - rails-demo-yarn-
+
+      - run:
+          name: Yarn Install
+          command: yarn install --cache-folder ~/.cache/yarn
+
+      # Store yarn / webpacker cache
+      - save_cache:
+          key: rails-demo-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
 
       # Database setup
       - run:
