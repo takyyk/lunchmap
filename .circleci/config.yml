@@ -52,6 +52,10 @@ jobs:
           paths:
             - ~/.cache/yarn
 
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
+
       # Database setup
       - run:
           name: Database setup
@@ -79,3 +83,8 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+
+      # run rubocop
+      - run:
+          name: run rubocop
+          command: bundle exec rubocop

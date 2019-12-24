@@ -18,7 +18,7 @@ gem 'slim-rails'
 gem 'webpacker', github: 'rails/webpacker'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry'
@@ -58,7 +58,8 @@ group :test do
   gem 'launchy'
   gem 'timecop'
   gem 'simplecov', require: false
+  gem 'rspec_junit_formatter', '~> 0.4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
