@@ -13,13 +13,11 @@ RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /app_name
-
-ENV APP_ROOT /app_name
-WORKDIR $APP_ROOT
-
-ADD ./Gemfile $APP_ROOT/Gemfile
-ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
+WORKDIR /tmp
+ADD Gemfile Gemfile
+ADD Gemfile.lock Gemfile.lock
 
 RUN bundle install
-ADD . $APP_ROOT
+
+WORKDIR /myapp
+ADD . /myapp
