@@ -13,11 +13,9 @@ RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-WORKDIR /tmp
-ADD Gemfile Gemfile
-ADD Gemfile.lock Gemfile.lock
-
-RUN bundle install
-
+RUN mkdir /myapp
 WORKDIR /myapp
-ADD . /myapp
+COPY Gemfile /myapp/Gemfile
+COPY Gemfile.lock /myapp/Gemfile.lock
+RUN bundle install
+COPY . /myapp

@@ -1,9 +1,10 @@
 version: "3"
 services:
   db:
+    restart: always
     image: mysql:5.7
     volumes:
-      - .mysql_data:/var/lib/mysql
+      - ./src/db/mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: root
@@ -21,6 +22,8 @@ services:
     stdin_open: true
     ports:
       - "3000:3000"
+    depends_on:
+      - db
 
 volumes:
   mysql-data:
