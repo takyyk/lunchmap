@@ -40,9 +40,8 @@ module AppName
                        helper_specs: false,
                        routing_specs: false,
                        controller_specs: false,
-                       model_specs: true,
                        request_specs: false,
-                       fixtures: true,
+                       model_specs: true,
                        system: true
       g.skip_routes true
       g.stylesheets false
