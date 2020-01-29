@@ -1,13 +1,15 @@
 version: "3"
 services:
   db:
-    restart: always
     image: mysql:8.0
     volumes:
       - ./db/mysql_data:/var/lib/mysql
     environment:
+      TZ: Asia/Tokyo
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: root
+    ports:
+      - 4306:3306
 
   web:
     build: .
