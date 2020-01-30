@@ -17,6 +17,8 @@ gem 'rails-i18n', '~> 5.1'
 gem 'slim-rails'
 gem 'webpacker', github: 'rails/webpacker'
 
+gem 'sorcery'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'better_errors'
