@@ -8,18 +8,14 @@
           = image_tag 'panda.jpg'
         .column
           div
-            | ゆるり屋
+            = simple_format(@report.title)
           div
-            | 2019/12/25
+            = l @report.created_at, format: :short
           .tags
             span.tag
-              | 山田一郎
-            span.tag
-              | 山田二郎
-            span.tag
-              | 山田三郎
+              = @report.user.decorate.full_name
           div
-            | おいしかったです！
-      button.button.is-link.is-outlined.is-fullwidth
-        | 一覧へ戻る
+            = simple_format(@report.body)
+      button.button.is-link.is-outlined
+        = link_to '一覧へ戻る', reports_path
     | 

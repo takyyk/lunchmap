@@ -17,7 +17,9 @@ class ReportsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @report = Report.find(params[:id])
+  end
 
   def report_params
     params.require(:report).permit(:title, :body)
