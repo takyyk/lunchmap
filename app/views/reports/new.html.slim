@@ -14,6 +14,6 @@
                 = f.text_area :body, class: 'input',placeholder: 'おみせのかんそう'
             .field
               .control
-                input.input[type="file" accept="image/*"]
+                = f.file_field :report_image, class: 'input', id: 'js-report_img', accept: 'image/*'
             .actions
               = f.submit '作成', class: 'btn btn-primary'

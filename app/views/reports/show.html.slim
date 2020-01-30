@@ -5,7 +5,7 @@
         | ランチの記録
       .columns
         .column.is-6
-          = image_tag 'panda.jpg'
+          = image_tag @report.report_image.url, size: "300x200"
         .column
           div
             = simple_format(@report.title)
