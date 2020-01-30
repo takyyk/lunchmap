@@ -1,0 +1,17 @@
+
+.column.is-4
+  a[href="/reports/show"]
+
+  .card
+    .card-image
+      .image.is-4by3
+        = image_tag 'panda.jpg'
+    .card-content
+      .content
+        div
+          = l report.created_at, format: :short
+        div
+          = link_to report.title, report_path(report)
+        .tags
+          span.tag
+           = link_to report.user.decorate.full_name
