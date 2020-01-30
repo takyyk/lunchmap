@@ -33,6 +33,10 @@ group :development, :test do
   gem 'faker'
   gem 'gimei'
 
+  gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
+  gem 'mini_magick'
+  gem 'fog'
+
   # Test
   gem 'factory_bot_rails', '~> 5.1.1'
   gem 'rspec-rails', '~> 3.8'
