@@ -8,4 +8,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true
 
   has_many :reports, dependent: :destroy
+
+  def report?(report)
+    report.user_id == id
+  end
 end
