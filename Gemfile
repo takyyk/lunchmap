@@ -19,6 +19,8 @@ gem 'webpacker', github: 'rails/webpacker'
 
 gem 'sorcery'
 
+gem 'draper'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'better_errors'
@@ -27,6 +29,9 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
+
+  gem 'faker'
+  gem 'gimei'
 
   # Test
   gem 'factory_bot_rails', '~> 5.1.1'
