@@ -35,7 +35,6 @@ group :development, :test do
 
   # Test
   gem 'factory_bot_rails', '~> 5.1.1'
-  gem 'faker'
   gem 'rspec-rails', '~> 3.8'
   gem 'spring-commands-rspec'
 end
