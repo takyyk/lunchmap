@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
-  get 'sign_in', to: 'sessions#new', as: :sign_in
   resources 'shops', only: %i[index]
-  resources 'reports', only: %i[index new show]
+  resources 'reports', only: %i[index new create show]
+
+  get '/login', to: 'user_sessions#new', as: :login
+  post '/login', to: 'user_sessions#create'
+  delete '/logout', to: 'user_sessions#destroy', as: :logout
+
+  resources :users, only: %i[new create]
 end

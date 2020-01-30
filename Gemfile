@@ -17,6 +17,10 @@ gem 'rails-i18n', '~> 5.1'
 gem 'slim-rails'
 gem 'webpacker', github: 'rails/webpacker'
 
+gem 'sorcery'
+
+gem 'draper'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'better_errors'
@@ -26,9 +30,11 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-rails'
 
+  gem 'faker'
+  gem 'gimei'
+
   # Test
   gem 'factory_bot_rails', '~> 5.1.1'
-  gem 'faker'
   gem 'rspec-rails', '~> 3.8'
   gem 'spring-commands-rspec'
 end

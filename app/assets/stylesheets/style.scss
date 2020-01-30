@@ -14,9 +14,6 @@ html {
   color: #242424;
   background: #fbfbfb;
 
-  @include sm {
-    font-size: 14px;
-  }
 }
 
 h1 {

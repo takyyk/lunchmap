@@ -5,21 +5,15 @@
         | ランチを記録
       .columns.is-centered
         .column.is-8
-          .field
-            .control
-              input.input[type="text" placeholder="グループ名"]
-          .field
-            .control
-              input.input[type="text" placeholder="おみせ"]
-          .field
-            .control
-              input.input[type="text" placeholder="メンバー"]
-          .field
-            .control
-              input.input[type="date"]
-          .field
-            .control
-              input.input[type="file" accept="image/*"]
-        |  
-      button.btn
-        | 投稿する
+          = form_with model: @report, local: true do |f|
+            .field
+              .control
+                = f.text_field :title, class: 'input', placeholder: 'おみせのなまえ'
+            .field
+              .control
+                = f.text_area :body, class: 'input',placeholder: 'おみせのかんそう'
+            .field
+              .control
+                input.input[type="file" accept="image/*"]
+            .actions
+              = f.submit '作成', class: 'btn btn-primary'
