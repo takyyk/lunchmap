@@ -21,6 +21,10 @@ gem 'sorcery'
 
 gem 'draper'
 
+gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
+gem 'mini_magick'
+gem 'fog-aws'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'better_errors'
@@ -32,10 +36,6 @@ group :development, :test do
 
   gem 'faker'
   gem 'gimei'
-
-  gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
-  gem 'mini_magick'
-  gem 'fog'
 
   # Test
   gem 'factory_bot_rails', '~> 5.1.1'
