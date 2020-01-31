@@ -24,6 +24,7 @@ gem 'draper'
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'fog'
 gem 'font-awesome-sass', '~> 5.9.0'
 
 group :development, :test do
