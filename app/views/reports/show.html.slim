@@ -16,6 +16,13 @@
               = @report.user.decorate.full_name
           div
             = simple_format(@report.body)
+
+        .column
+          - if current_user.report?(@report)
+            = link_to edit_report_path(@report) do
+              span.fa.fa-edit
+            = link_to report_path(@report), method: :delete, data: { confirm: "本当に削除しますか？" } do
+              span.fa.fa-trash
       button.button.is-link.is-outlined
         = link_to '一覧へ戻る', reports_path
     | 

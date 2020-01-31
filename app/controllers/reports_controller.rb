@@ -1,4 +1,6 @@
 class ReportsController < ApplicationController
+  before_action :set_report, only: %i[edit update destroy]
+
   def index
     @reports = Report.all.includes(:user)
   end
@@ -19,6 +21,28 @@ class ReportsController < ApplicationController
 
   def show
     @report = Report.find(params[:id])
+  end
+
+  def edit; end
+
+  def update
+    if @report.update(report_params)
+      redirect_to report_path, success: '更新しました'
+    else
+      flash.now[:danger] = '更新できませんでした'
+      render :edit
+    end
+  end
+
+  def destroy
+    @report.destroy!
+    redirect_to reports_path, success: '削除しました'
+  end
+
+  private
+
+  def set_report
+    @report = current_user.reports.find(params[:id])
   end
 
   def report_params

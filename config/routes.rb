@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources 'shops', only: %i[index]
-  resources 'reports', only: %i[index new create show]
+  resources 'reports'
 
   get '/login', to: 'user_sessions#new', as: :login
   post '/login', to: 'user_sessions#create'
