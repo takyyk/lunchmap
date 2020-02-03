@@ -2,7 +2,10 @@
   aside.menu
     a[href="/"]
       = image_tag 'icon.svg'
-    ul.menu-list
+    - if current_user.present?
+      .greeting
+        = "ようこそ, #{current_user.decorate.full_name} さん"
+    ul.menu-list.nav-menu-list
       li
         a[href="/"]
           | ホーム
