@@ -8,10 +8,10 @@
           = form_with scope: :user_sessions, url: login_path, local: true do |f|
             .field
               .control
-                = f.label :email
+                = f.label(:email, User.human_attribute_name(:email))
                 = f.email_field :email, class: 'input'
             .field.control
-              = f.label :password
+              = f.label(:password, User.human_attribute_name(:password))
               = f.password_field :password, class: 'input'
             button
               = f.submit "ログイン", class: "button is-primary is-large is-rounded"

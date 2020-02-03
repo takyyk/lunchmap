@@ -2,16 +2,23 @@
   aside.menu
     a[href="/"]
       = image_tag 'icon.svg'
-    ul.menu-list
+    - if current_user.present?
+      .greeting
+        = "ようこそ#{current_user.decorate.full_name}さん"
+    ul.menu-list.nav-menu-list
       li
         a[href="/"]
           | ホーム
-      li
-        a[href="/shops"]
-          | 一覧でお店を探す
-      li
-        a[href="/reports/new"]
-          | ランチを記録する
-      li
-        a[href="/reports"]
-          | ランチの記録をみる
+      - if logged_in?
+        li
+          a[href="/reports/new"]
+            | ランチを記録する
+        li
+          a[href="/reports"]
+            | 一覧でお店を探す
+        li
+          = link_to "ログアウト", logout_path, method: :delete
+      - else
+        li
+          a[href="/login"]
+            | ログイン
