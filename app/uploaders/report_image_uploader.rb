@@ -22,11 +22,6 @@ class ReportImageUploader < CarrierWave::Uploader::Base
     1..5.megabytes
   end
 
-  # 保存するファイルの命名規則
-  def filename
-    "#{secure_token}.#{file.extension}" if original_filename.present?
- end
-
   def default_url
     'sample.jpg'
   end
