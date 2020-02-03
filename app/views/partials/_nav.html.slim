@@ -8,14 +8,11 @@
           | ホーム
       - if logged_in?
         li
-          a[href="/shops"]
-            | 一覧でお店を探す
-        li
           a[href="/reports/new"]
             | ランチを記録する
         li
           a[href="/reports"]
-            | ランチの記録をみる
+            | 一覧でお店を探す
         li
           = link_to "ログアウト", logout_path, method: :delete
       - else
