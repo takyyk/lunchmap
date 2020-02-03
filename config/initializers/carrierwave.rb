@@ -5,7 +5,6 @@ if Rails.env.production?
       provider: 'AWS',
       aws_access_key_id: Rails.application.credentials.dig(:aws, :access_key_id),
       aws_secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key),
-      #S3のリージョン #ap-northeast-1はアジアパシフィック(東京)
       region: 'ap-northeast-1'
     }
     # S3のバケット名
