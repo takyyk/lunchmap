@@ -6,12 +6,17 @@
       li
         a[href="/"]
           | ホーム
-      li
-        a[href="/shops"]
-          | 一覧でお店を探す
-      li
-        a[href="/reports/new"]
-          | ランチを記録する
-      li
-        a[href="/reports"]
-          | ランチの記録をみる
+      - if logged_in?
+        li
+          a[href="/shops"]
+            | 一覧でお店を探す
+        li
+          a[href="/reports/new"]
+            | ランチを記録する
+        li
+          a[href="/reports"]
+            | ランチの記録をみる
+      - else
+        li
+          a[href="/login"]
+            | ログイン
