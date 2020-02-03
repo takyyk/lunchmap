@@ -16,6 +16,8 @@
         li
           a[href="/reports"]
             | ランチの記録をみる
+        li
+          = link_to "ログアウト", logout_path, method: :delete
       - else
         li
           a[href="/login"]
