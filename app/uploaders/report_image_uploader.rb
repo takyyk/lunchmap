@@ -1,6 +1,6 @@
 class ReportImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_to_fit: [300, 200]
+  process resize_to_fit: [1540, 800]
 
   if Rails.env.development?
     storage :file
