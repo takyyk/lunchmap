@@ -11,7 +11,7 @@
                 = f.text_field :title, class: 'input', placeholder: 'おみせのなまえ'
             .field
               .control
-                = f.text_area :body, class: 'input',placeholder: 'おみせのかんそう'
+                = f.text_area :body, class: 'input', placeholder: 'おみせのかんそう', class: 'textarea is-medium'
             .field
               .control
                 = f.file_field :report_image, class: 'input', id: 'js-report_img', accept: 'image/*'
