@@ -16,55 +16,34 @@
         .tile.is-vertical.is-12
           .tile
             .tile.is-parent.is-vertical
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
+              - @reports.shuffle.first(3).each do |report|
+                article.tile.is-child
+                  .panda
+                    = image_tag report.report_image.url
             .tile.is-parent.is-vertical
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
+              - @reports.shuffle.first(2).each do |report|
+                article.tile.is-child
+                  .panda
+                    = image_tag report.report_image.url
             .tile.is-parent.is-vertical
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
+              - @reports.shuffle.first(3).each do |report|
+                article.tile.is-child
+                  .panda
+                    = image_tag report.report_image.url
           .tile
             .tile.is-parent.is-vertical
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
+              - @reports.shuffle.first(2).each do |report|
+                article.tile.is-child
+                  .panda
+                    = image_tag report.report_image.url
             .tile.is-parent.is-vertical
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
+              - @reports.shuffle.first(3).each do |report|
+                article.tile.is-child
+                  .panda
+                    = image_tag report.report_image.url
             .tile.is-parent.is-vertical
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
-              article.tile.is-child
-                .panda
-                  = image_tag 'sample.jpg'
+              - @reports.shuffle.first(2).each do |report|
+                article.tile.is-child
+                  .panda
+                    = image_tag report.report_image.url
 | 
