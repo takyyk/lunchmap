@@ -15,5 +15,5 @@
               = f.password_field :password, class: 'input'
             button
               = f.submit "ログイン", class: "button is-primary is-large is-rounded"
-          .text-center
-            = link_to "登録ページへ", new_user_path
+          .text-center.column
+            = link_to "登録ページへ", new_user_path, class: "button is-small is-rounded"

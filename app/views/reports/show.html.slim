@@ -4,8 +4,8 @@
       h1.is-size-3.has-text-primary.has-text-weight-bold
         | ランチの記録
       .columns
-        .column.is-6
-          = image_tag @report.report_image.url, size: "300x200"
+        .column.is-5
+          = image_tag @report.report_image.url, size: "350x200"
         .column
           div
             = simple_format(@report.title)

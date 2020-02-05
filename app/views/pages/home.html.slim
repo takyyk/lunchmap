@@ -5,10 +5,15 @@
         | ランチアプリ
       p.has-text-centered
         | このアプリではお店をしらべたりレポートの投稿ができます
-      .columns
-        .column
-          a.button.is-link.is-fullwidth[href="/reports/new"]
-            | ランチを記録する
+      .columns.column
+        - if logged_in?
+          .column
+            a.button.is-link.is-fullwidth[href="/reports/new"]
+              | ランチを記録する
+        - else
+          .column
+            a.button.is-link.is-fullwidth[href="/login"]
+              | ログインしてお店を投稿する
         .column
           a.button.is-link.is-fullwidth[href="/reports"]
             | 一覧でお店を探す

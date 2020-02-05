@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+  skip_before_action :require_login
   before_action :set_report, only: %i[edit update destroy]
 
   def index
