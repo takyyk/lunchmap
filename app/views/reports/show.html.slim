@@ -18,7 +18,7 @@
             = simple_format(@report.body)
 
         .column
-          - if current_user.report?(@report)
+          - if current_user&.report?(@report)
             = link_to edit_report_path(@report) do
               span.button.is-success.is-small
                 | 編集
