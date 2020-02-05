@@ -13,7 +13,9 @@
   color: #fff;
 }
 
-.button.is-primary {
-  color: #FFF;
-  margin-bottom: 0.25rem;
+.button {
+  margin: 0.25rem;
+  .is-primary {
+    color: #FFF;
+  }
 }
