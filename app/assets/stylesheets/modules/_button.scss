@@ -15,7 +15,11 @@
 
 .button {
   margin: 0.25rem;
-  .is-primary {
-    color: #FFF;
+}
+
+.button.is-primary {
+  color: #F5F5DC;
+  &:hover {
+  color: #F5F5F5;
   }
 }
