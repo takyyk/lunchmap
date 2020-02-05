@@ -20,9 +20,11 @@
         .column
           - if current_user.report?(@report)
             = link_to edit_report_path(@report) do
-              span.fa.fa-edit
+              span.button.is-success.is-small
+                | 編集
             = link_to report_path(@report), method: :delete, data: { confirm: "本当に削除しますか？" } do
-              span.fa.fa-trash
+              span.button.is-danger.is-small
+                | 削除
       button.button.is-link.is-outlined
         = link_to '一覧へ戻る', reports_path
     | 

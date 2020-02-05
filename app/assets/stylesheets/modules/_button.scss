@@ -12,3 +12,10 @@
   background: #FFC000;
   color: #fff;
 }
+
+.button {
+  margin: 0.25rem;
+  .is-primary {
+    color: #FFF;
+  }
+}
