@@ -20,5 +20,8 @@
           = link_to "ログアウト", logout_path, method: :delete
       - else
         li
+          a[href="/reports"]
+            | 一覧でお店を探す
+        li
           a[href="/login"]
             | ログイン

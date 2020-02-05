@@ -17,9 +17,10 @@
           button.button.is-success.is-outlined.is-fullwidth
             | 絞り込み
       .columns.is-mobile
-        .column
-          button.button.is-success.is-outlined.is-fullwidth
-            | 自分が参加したランチのみを表示
+        - if logged_in?
+          .column
+            button.button.is-success.is-outlined.is-fullwidth
+              | 自分が参加したランチのみを表示
       .columns.is-multiline
         - if @reports.length > 0
           = render @reports
