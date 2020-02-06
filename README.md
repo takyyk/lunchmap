@@ -31,4 +31,4 @@
 
 ### テスト
 
-- Rspec
+- Rspec(system spec/model spec)
