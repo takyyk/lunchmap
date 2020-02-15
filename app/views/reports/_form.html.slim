@@ -1,0 +1,22 @@
+.column
+  .main
+    .container
+      h1.is-size-3.has-text-primary.has-text-weight-bold
+        | ランチを記録
+      .columns.is-centered
+        .column.is-8
+          = form_with model: @report, local: true do |f|
+            .field
+              .control
+                = f.text_field :title, class: 'input', placeholder: 'おみせのなまえ'
+            .field
+              .control
+                = f.text_area :body, class: 'input', placeholder: 'おみせのかんそう', class: 'textarea is-medium'
+            .field
+              .control
+                = f.file_field :report_image, class: 'input', id: 'js-report_img', accept: 'image/*'
+            .actions
+              - if report.new_record?
+                = f.submit '作成', class: 'btn btn-primary'
+              - else
+                = f.submit '更新', class: 'btn btn-primary'

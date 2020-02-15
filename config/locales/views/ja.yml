@@ -1,0 +1,15 @@
+ja:
+  user_sessions:
+    new:
+      login: 'ログイン'
+      signup_link: '登録ページへ'
+  users:
+    new:
+      sign_up: 'ユーザー登録'
+      signup_btn: '登録'
+      login_link: 'ログインページへ'
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      short: "%y/%m/%d %H:%M"

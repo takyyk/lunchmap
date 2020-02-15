@@ -1,0 +1,28 @@
+.column
+  .main
+    .container
+      h1.is-size-3.has-text-primary.has-text-weight-bold
+        | ランチの記録
+      .columns.is-mobile
+        .column.is-8
+          .field
+            .control
+              .select
+                select
+                  option
+                    | カテゴリを選ぶ
+                  option
+                    | With options
+        .column
+          button.button.is-success.is-outlined.is-fullwidth
+            | 絞り込み
+      .columns.is-mobile
+        - if logged_in?
+          .column
+            button.button.is-success.is-outlined.is-fullwidth
+              | 自分が参加したランチのみを表示
+      .columns.is-multiline
+        - if @reports.length > 0
+          = render @reports
+        - else
+          p 投稿がありません

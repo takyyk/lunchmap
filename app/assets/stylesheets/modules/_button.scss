@@ -1,0 +1,25 @@
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  margin: 0 auto;
+  background: #FFC000;
+  color: #fff;
+}
+
+.button {
+  margin: 0.25rem;
+}
+
+.button.is-primary {
+  color: #F5F5DC;
+  &:hover {
+  color: #F5F5F5;
+  }
+}

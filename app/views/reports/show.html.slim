@@ -1,0 +1,30 @@
+.column
+  .main
+    .container
+      h1.is-size-3.has-text-primary.has-text-weight-bold
+        | ランチの記録
+      .columns
+        .column.is-5
+          = image_tag @report.report_image.url, size: "350x200"
+        .column
+          div
+            = simple_format(@report.title)
+          div
+            = l @report.created_at, format: :short
+          .tags
+            span.tag
+              = @report.user.decorate.full_name
+          div
+            = simple_format(@report.body)
+
+        .column
+          - if current_user&.report?(@report)
+            = link_to edit_report_path(@report) do
+              span.button.is-success.is-small
+                | 編集
+            = link_to report_path(@report), method: :delete, data: { confirm: "本当に削除しますか？" } do
+              span.button.is-danger.is-small
+                | 削除
+      button.button.is-link.is-outlined
+        = link_to '一覧へ戻る', reports_path
+    | 
